@@ -15,6 +15,7 @@ var ports = ['a', 'b', 'c', 'd', 1, 2, 3, 4]
 var node
 
 app.use(bodyParser.json())
+app.use(cors())
 app.use(router)
 app.listen(5000)
 
@@ -27,7 +28,7 @@ router.route('/file.get/:name')
 	.post(function (req, res) {
 		var file = __dirname + '/files/' + req.body.name
 		fs.readFile(file, 'utf-8', function (err, data) {
-			if (err)  {
+			if (err) {
 			  var startString = 'var MoveSteering = require(\'move-steering\')'
 			  fs.writeFileSync(file, startString)
 			  return res.send(startString)
@@ -134,7 +135,7 @@ router.route('/sensor.mode')
 		var writePath = path.join(req.body.path, 'mode')
 	  fs.writeFile(writePath, req.body.mode, function (err) {
 	    if (err) {
-	      res.json({ 
+	      res.json({
 	        ok: false,
 	        msg: err
 	      })
