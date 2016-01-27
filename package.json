@@ -1,0 +1,35 @@
+{
+  "name": "ev3-server",
+  "version": "0.1.0",
+  "description": "server to place on ev3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danleavitt0/ev3-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danleavitt0/ev3-server/issues"
+  },
+  "homepage": "https://github.com/danleavitt0/ev3-server#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "color-sensor": "^0.1.20",
+    "cors": "^2.7.1",
+    "ev3-js-devices": "^0.5.7",
+    "ev3-js-motor": "^0.5.20",
+    "ev3-js-wait": "^0.1.4",
+    "express": "^4.13.4",
+    "ir-sensor": "^0.1.20",
+    "move-steering": "^0.1.39",
+    "parsetrace": "^0.2.0",
+    "path": "^0.12.7",
+    "touch-sensor": "^0.1.16",
+    "ultrasonic-sensor": "^0.1.11"
+  }
+}

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+EXEC=/usr/bin/node
+FILE=/home/robot/ev3/server.js
+
+case "$1" in 
+	start)
+		$EXEC $FILE start
+
+esac
