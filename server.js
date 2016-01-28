@@ -21,7 +21,8 @@ app.listen(5000)
 
 router.route('/ping')
 	.post(function (req, res) {
-		res.send(true)
+		console.log(req.body)
+		res.json({ok: true, url: req.body.url})
 	})
 
 router.route('/file.get/:name')
