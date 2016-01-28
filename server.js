@@ -26,7 +26,7 @@ router.route('/ping')
 
 router.route('/file.get/:name')
 	.post(function (req, res) {
-		var file = __dirname + '/files/' + req.body.name
+		var file = __dirname + '/files/' + req.params.name
 		fs.readFile(file, 'utf-8', function (err, data) {
 			if (err) {
 			  var startString = 'var MoveSteering = require(\'move-steering\')'
