@@ -21,7 +21,6 @@ app.listen(5000)
 
 router.route('/ping')
 	.post(function (req, res) {
-		console.log(req.body)
 		res.json({ok: true, url: req.body.url})
 	})
 
@@ -106,7 +105,7 @@ router.route('/file.getAll')
 	    if (err) {
 	      res.send({text: ''})
 	    }
-	    res.send(JSON.stringify(data))
+	    res.json({data: data})
 	  })
 	})
 
