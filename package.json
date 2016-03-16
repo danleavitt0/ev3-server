@@ -2,7 +2,7 @@
   "name": "ev3-server",
   "version": "0.1.0",
   "description": "Websocket server for the ev3 robot",
-  "main": "index.js",
+  "main": "lib/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +19,6 @@
   "dependencies": {
     "ev3-js-device": "^0.1.2",
     "ev3-js-devices": "^0.5.10",
-    "lws": "^0.6.2"
+    "ws": "^1.0.1"
   }
 }
