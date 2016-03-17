@@ -6,23 +6,35 @@ var response
 
 ws.on('open', function () {
   test('sensor read', function (t) {
-    // t.plan(1)
+    t.plan(1)
     ws.send(sensorSubscribe())
     setTimeout(function () {
-      // t.equals(response.ok, true)
-    })
+      t.equals(response.ok, true)
+      ws.send(sensorUnsubscribe())
+    }, 3000)
   })
 })
 
 ws.on('message', function (data) {
-  response = JSON.parse(data)
-  console.log(response)
+  data = JSON.parse(data)
+  console.log(data)
+  if (data['reply_to'] === 1) {
+    response = JSON.parse(data)
+    console.log(response)
+  }
 })
 
 function sensorSubscribe () {
   return JSON.stringify({
     type: 'sensor_subscribe',
     id: 1
+  })
+}
+
+function sensorUnsubscribe () {
+  return JSON.stringify({
+    type: 'sensor_unsubscribe',
+    id: 2
   })
 }
 //
