@@ -10,7 +10,7 @@ ws.on('open', function () {
     ws.send(degrees(1))
     setTimeout(function () {
       t.equals(response[0].ok, true)
-    }, 500)
+    }, 1000)
   })
 })
 
