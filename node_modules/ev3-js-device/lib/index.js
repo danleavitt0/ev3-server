@@ -6,8 +6,8 @@ function Device (path) {
   this.path = path
 }
 
-Device.prototype.write = function (prefix, cmd) {
-  return fs.writeFileSync(this.path + '/' + prefix, cmd)
+Device.prototype.write = function (prefix, cmd, cb) {
+  return fs.writeFile(this.path + '/' + prefix, cmd, cb)
 }
 
 Device.prototype.read = function (prop) {
