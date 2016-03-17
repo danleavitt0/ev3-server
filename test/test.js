@@ -1,29 +1,30 @@
 var test = require('tape')
 
+var WebSocket = require('ws')
 var ws = new WebSocket('ws://192.168.1.221:3000')
 var response
 
-ws.onopen = function () {
+ws.on('open', function () {
   test('sensor read', function (t) {
-    t.plan(1)
+    // t.plan(1)
     ws.send(sensorSubscribe())
     setTimeout(function () {
-      t.equals(response.ok, true)
+      // t.equals(response.ok, true)
     })
   })
+})
+
+ws.on('message', function (data) {
+  response = JSON.parse(data)
+  console.log(response)
+})
+
+function sensorSubscribe () {
+  return JSON.stringify({
+    type: 'sensor_subscribe',
+    id: 1
+  })
 }
-
-
-ws.onmessage = function (evt) {
-  response = JSON.parse(evt.data)
-}
-
-// function sensorSubscribe () {
-//   return JSON.stringify({
-//     type: 'sensor_subscribe',
-//     id: 1
-//   })
-// }
 //
 // function setSpeed () {
 //   return {
