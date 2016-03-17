@@ -20,5 +20,8 @@
     "ev3-js-device": "^0.1.3",
     "ev3-js-devices": "^0.5.10",
     "ws": "^1.0.1"
+  },
+  "devDependencies": {
+    "tape": "^4.5.1"
   }
 }
