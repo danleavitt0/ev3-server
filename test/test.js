@@ -2,16 +2,16 @@ var test = require('tape')
 
 var WebSocket = require('ws')
 var ws = new WebSocket('ws://192.168.1.221:3000')
-var response
+var response = []
 
 ws.on('open', function () {
   test('sensor read', function (t) {
     t.plan(1)
     ws.send(sensorSubscribe())
     setTimeout(function () {
-      t.equals(response.ok, true)
+      t.equals(response[0].ok, true)
       ws.send(sensorUnsubscribe())
-    }, 3000)
+    }, 2000)
   })
 })
 
@@ -19,8 +19,7 @@ ws.on('message', function (data) {
   data = JSON.parse(data)
   console.log(data)
   if (data['reply_to'] === 1) {
-    response = JSON.parse(data)
-    console.log(response)
+    response.push(JSON.parse(data))
   }
 })
 
