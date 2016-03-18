@@ -7,10 +7,11 @@ var response = []
 ws.on('open', function () {
   test('should run motor', function (t) {
     t.plan(1)
-    ws.send(degrees(1))
+    ws.send(degrees('b', 1))
+    ws.send(degrees('c', 2))
     setTimeout(function () {
       t.equals(response[0].ok, true)
-    }, 1000)
+    }, 5000)
   })
 })
 
@@ -23,14 +24,15 @@ ws.on('message', function (data) {
 })
 
 //
-function degrees () {
+function degrees (port, id) {
   return JSON.stringify({
     type: 'motor_write',
-    id: 1,
+    id: id,
     command: 'run-to-rel-pos',
+    port: port,
     opts: {
       'position_sp': '1000',
-      'speed_sp': '400'
+      'duty_cycle_sp': '50'
     }
   })
 }
