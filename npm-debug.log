@@ -1,0 +1,97 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/9dots/.nvm/v0.11.14/bin/node',
+1 verbose cli   '/Users/9dots/.nvm/v0.11.14/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   '@f/for-each' ]
+2 info using npm@2.0.0
+3 info using node@v0.11.14
+4 warn package.json ev3-server@0.1.0 No README data
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ '@f/for-each', null ]
+7 verbose cache add spec="@f/for-each" args=["@f/for-each",null]
+8 verbose parsed spec { raw: '@f/for-each',
+8 verbose parsed spec   scope: '@f',
+8 verbose parsed spec   name: '@f/for-each',
+8 verbose parsed spec   rawSpec: '',
+8 verbose parsed spec   spec: '*',
+8 verbose parsed spec   type: 'range' }
+9 verbose parsed spec { raw: '@f/for-each',
+9 verbose parsed spec   scope: '@f',
+9 verbose parsed spec   name: '@f/for-each',
+9 verbose parsed spec   rawSpec: '',
+9 verbose parsed spec   spec: '*',
+9 verbose parsed spec   type: 'range' }
+10 verbose addNamed [ '@f/for-each', '*' ]
+11 verbose addNamed [ null, '*' ]
+12 silly lockFile 47002a94-f-for-each @f/for-each@*
+13 verbose lock @f/for-each@* /Users/9dots/.npm/47002a94-f-for-each.lock
+14 silly addNameRange { name: '@f/for-each', range: '*', hasData: false }
+15 silly mapToRegistry scope @f
+16 verbose mapToRegistry no registry URL found for scope @f
+17 verbose mapToRegistry name @f%2ffor-each
+18 verbose mapToRegistry uri https://registry.npmjs.org/@f%2ffor-each
+19 verbose request on initialization, where is /@f%2ffor-each
+20 verbose request after pass 1, where is /@f%2ffor-each
+21 verbose request url raw /@f%2ffor-each
+22 verbose request resolving registry [ 'https://registry.npmjs.org/', './@f%2ffor-each' ]
+23 verbose request after pass 2, where is https://registry.npmjs.org/@f%2ffor-each
+24 verbose request no auth needed
+25 info attempt registry request try #1 at 12:06:51
+26 verbose request using bearer token for auth
+27 verbose request id e7e9a01fee12509e
+28 http request GET https://registry.npmjs.org/@f%2ffor-each
+29 http 404 https://registry.npmjs.org/@f%2ffor-each
+30 verbose headers { 'content-type': 'application/json',
+30 verbose headers   'cache-control': 'max-age=0',
+30 verbose headers   'content-length': '21',
+30 verbose headers   'accept-ranges': 'bytes',
+30 verbose headers   date: 'Fri, 18 Mar 2016 19:06:51 GMT',
+30 verbose headers   via: '1.1 varnish',
+30 verbose headers   connection: 'close',
+30 verbose headers   'x-served-by': 'cache-sjc3132-SJC',
+30 verbose headers   'x-cache': 'MISS',
+30 verbose headers   'x-cache-hits': '0',
+30 verbose headers   'x-timer': 'S1458328011.226791,VS0,VE48' }
+31 silly registry.get cb [ 404,
+31 silly registry.get   { 'content-type': 'application/json',
+31 silly registry.get     'cache-control': 'max-age=0',
+31 silly registry.get     'content-length': '21',
+31 silly registry.get     'accept-ranges': 'bytes',
+31 silly registry.get     date: 'Fri, 18 Mar 2016 19:06:51 GMT',
+31 silly registry.get     via: '1.1 varnish',
+31 silly registry.get     connection: 'close',
+31 silly registry.get     'x-served-by': 'cache-sjc3132-SJC',
+31 silly registry.get     'x-cache': 'MISS',
+31 silly registry.get     'x-cache-hits': '0',
+31 silly registry.get     'x-timer': 'S1458328011.226791,VS0,VE48' } ]
+32 silly lockFile 47002a94-f-for-each @f/for-each@*
+33 silly lockFile 47002a94-f-for-each @f/for-each@*
+34 verbose stack Error: Not found : @f%2ffor-each
+34 verbose stack     at RegClient.<anonymous> (/Users/9dots/.nvm/v0.11.14/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:261:14)
+34 verbose stack     at Request._callback (/Users/9dots/.nvm/v0.11.14/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:198:65)
+34 verbose stack     at Request.self.callback (/Users/9dots/.nvm/v0.11.14/lib/node_modules/npm/node_modules/request/request.js:236:22)
+34 verbose stack     at Request.emit (events.js:110:17)
+34 verbose stack     at Request.<anonymous> (/Users/9dots/.nvm/v0.11.14/lib/node_modules/npm/node_modules/request/request.js:1142:14)
+34 verbose stack     at Request.emit (events.js:129:20)
+34 verbose stack     at IncomingMessage.<anonymous> (/Users/9dots/.nvm/v0.11.14/lib/node_modules/npm/node_modules/request/request.js:1096:12)
+34 verbose stack     at IncomingMessage.emit (events.js:129:20)
+34 verbose stack     at _stream_readable.js:907:16
+34 verbose stack     at process._tickCallback (node.js:372:11)
+35 verbose statusCode 404
+36 verbose pkgid @f%2ffor-each
+37 verbose cwd /Users/9dots/Repositories/ev3-server
+38 error Darwin 14.5.0
+39 error argv "/Users/9dots/.nvm/v0.11.14/bin/node" "/Users/9dots/.nvm/v0.11.14/bin/npm" "install" "--save" "@f/for-each"
+40 error node v0.11.14
+41 error npm  v2.0.0
+42 error code E404
+43 error 404 Not found : @f%2ffor-each
+43 error 404
+43 error 404 '@f%2ffor-each' is not in the npm registry.
+43 error 404 You should bug the author to publish it (or use the name yourself!)
+43 error 404 It was specified as a dependency of 'ev3-server'
+43 error 404
+43 error 404 Note that you can also install from a
+43 error 404 tarball, folder, http url, or git url.
+44 verbose exit [ 1, true ]
