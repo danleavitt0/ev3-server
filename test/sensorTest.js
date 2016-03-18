@@ -1,7 +1,7 @@
 var test = require('tape')
 
 var WebSocket = require('ws')
-var ws = new WebSocket('ws://localhost:3000')
+var ws = new WebSocket('ws://192.168.1.6:3000')
 var response = []
 var id = 1
 
@@ -19,7 +19,7 @@ ws.on('open', function () {
     ws.send(sensorSubscribe(1))
     setTimeout(function () {
       t.equals(response[0].ok, true)
-    }, 500)
+    }, 2000)
   })
   // test('should block second read', function (t) {
   //   t.plan(1)
