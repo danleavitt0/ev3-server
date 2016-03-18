@@ -1,9 +1,9 @@
 var test = require('tape')
 
 var WebSocket = require('ws')
-var ws = new WebSocket('ws://192.168.1.6:3000')
+var ws = new WebSocket('ws://localhost:3000')
 var response = []
-var id = 0
+var id = 1
 
 ws.on('open', function () {
   console.log('connected')
@@ -11,17 +11,16 @@ ws.on('open', function () {
     console.time(id)
     ws.send(JSON.stringify({
       type: 'ping',
-      id: ++id
+      id: id++
     }))
-  }, 500)
-  // test('should read sensors', function (t) {
-  //   t.plan(1)
-  //   console.time('start')
-  //   ws.send(sensorSubscribe(1))
-  //   setTimeout(function () {
-  //     t.equals(response[0].ok, true)
-  //   }, 500)
-  // })
+  }, 1000)
+  test('should read sensors', function (t) {
+    t.plan(1)
+    ws.send(sensorSubscribe(1))
+    setTimeout(function () {
+      t.equals(response[0].ok, true)
+    }, 500)
+  })
   // test('should block second read', function (t) {
   //   t.plan(1)
   //   ws.send(sensorSubscribe(2))
@@ -50,8 +49,7 @@ ws.on('open', function () {
 ws.on('message', function (data) {
   data = JSON.parse(data)
   console.log(data)
-  if (data['reply_to']) {
-    console.timeEnd(data.reply_to)
+  if (data['reply_id']) {
     response.push(data)
   }
 })
