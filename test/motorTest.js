@@ -11,7 +11,7 @@ ws.on('open', function () {
     ws.send(degrees('c', 2))
     setTimeout(function () {
       t.equals(response[0].ok, true)
-      ws.send(moveSteering(3))
+      ws.send(moveSteering(3, 400))
     }, 5000)
   })
 })
@@ -23,15 +23,17 @@ ws.on('message', function (data) {
   }
 })
 
-function moveSteering (ports, id, degrees, speed, turn) {
+function moveSteering (id, degrees, speed, turn, ports) {
   ports = ports || ['b', 'c']
   speed = speed || 50
-
+  turn = turn || 50
   var values = turnToDegrees(turn, speed, degrees)
+
   return JSON.stringify({
     type: 'move_steering',
     ports: ports,
     id: id,
+    command: 'run-to-rel-pos',
     opts: {
       left: {
         'position_sp': values.left.degrees,
@@ -42,7 +44,6 @@ function moveSteering (ports, id, degrees, speed, turn) {
         'duty_cycle_sp': values.right.speed
       }
     }
-
   })
 }
 
