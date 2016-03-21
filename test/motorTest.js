@@ -1,7 +1,7 @@
 var test = require('tape')
 
 var WebSocket = require('ws')
-var ws = new WebSocket('ws://localhost:3000')
+var ws = new WebSocket('ws://192.168.1.6:5000')
 var response = []
 
 ws.on('open', function () {
@@ -18,7 +18,8 @@ ws.on('open', function () {
 
 ws.on('message', function (data) {
   data = JSON.parse(data)
-  if (data['reply_to']) {
+  console.log(data)
+  if (data['reply_id']) {
     response.push(data)
   }
 })
@@ -30,7 +31,7 @@ function moveSteering (id, degrees, speed, turn, ports) {
   var values = turnToDegrees(turn, speed, degrees)
 
   return JSON.stringify({
-    type: 'move_steering',
+    type: 'motors_write',
     ports: ports,
     id: id,
     command: 'run-to-rel-pos',
