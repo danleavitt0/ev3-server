@@ -1,7 +1,7 @@
 var test = require('tape')
 
 var WebSocket = require('ws')
-var ws = new WebSocket('ws://192.168.1.6:3000')
+var ws = new WebSocket('ws://localhost:3000')
 var response = []
 var id = 1
 

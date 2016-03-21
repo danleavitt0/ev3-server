@@ -22,6 +22,7 @@
     "@f/is-object": "^1.1.4",
     "ev3-js-device": "^0.1.3",
     "ev3-js-devices": "^0.5.10",
+    "realtime-api-server": "^0.1.2",
     "wolfy87-eventemitter": "^4.3.0",
     "ws": "^1.0.1"
   },
