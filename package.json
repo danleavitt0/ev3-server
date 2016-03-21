@@ -21,6 +21,7 @@
     "@f/foreach": "^1.2.2",
     "@f/is-object": "^1.1.4",
     "component-emitter": "^1.2.0",
+    "ev3-api": "^0.1.1",
     "ev3-js-device": "^0.1.3",
     "ev3-js-devices": "^0.5.10",
     "realtime-api-server": "^0.1.2",
