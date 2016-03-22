@@ -7,11 +7,10 @@ var response = []
 ws.on('open', function () {
   test('should run motor', function (t) {
     t.plan(1)
-    ws.send(degrees('b', 1))
-    ws.send(degrees('c', 2))
+    ws.send(moveSteering(3, 400))
     setTimeout(function () {
       t.equals(response[0].ok, true)
-      ws.send(moveSteering(3, 400))
+      setTimeout(function() { ws.close() }, 1000)
     }, 5000)
   })
 })
@@ -27,7 +26,7 @@ ws.on('message', function (data) {
 function moveSteering (id, degrees, speed, turn, ports) {
   ports = ports || ['b', 'c']
   speed = speed || 50
-  turn = turn || 50
+  turn = turn || 0
   var values = turnToDegrees(turn, speed, degrees)
 
   return JSON.stringify({
