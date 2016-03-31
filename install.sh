@@ -1,3 +1,5 @@
+echo 'chaning power saving modes for wifi connectivity'
+cp 8192cu.conf /etc/modprobe.d/8192cu.conf
 echo 'removing old ev3 int script'
 rm -rf /etc/init.d/ev3-server
 echo 'copying init script to init.d'
