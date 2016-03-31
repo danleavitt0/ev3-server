@@ -1,0 +1,9 @@
+#!/bin/sh
+
+EXEC = /home/robot/ev3-server/node_modules/.bin/forever
+FILE = /home/robot/ev3/lib/server.js
+
+case "$1" in
+        start)
+              $EXEC $FILE start
+esac
