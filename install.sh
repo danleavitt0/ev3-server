@@ -1,4 +1,6 @@
 echo 'changing power saving modes for wifi connectivity'
+rm -rf /etc/connman/main.conf
+cp main.conf /etc/connman/main.conf
 cp 8192cu.conf /etc/modprobe.d/8192cu.conf
 echo 'removing old ev3 int script'
 rm -rf /etc/init.d/ev3-server
