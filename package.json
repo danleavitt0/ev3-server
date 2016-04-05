@@ -1,6 +1,6 @@
 {
   "name": "ev3-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Websocket server for the ev3 robot",
   "main": "lib/server.js",
   "scripts": {
