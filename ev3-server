@@ -7,6 +7,6 @@ FILE=/home/robot/ev3-server/lib/server.js
 
 case "$1" in
         start)
-              $GIT --git-dir=REPO pull
+              $GIT --git-dir=$REPO pull
               $EXEC $FILE start
 esac
