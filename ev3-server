@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 
 EXEC=/home/robot/ev3-server/node_modules/.bin/forever
 REPO=/home/robot/ev3-server/.git
@@ -7,6 +7,5 @@ FILE=/home/robot/ev3-server/lib/server.js
 
 case "$1" in
         start)
-              $GIT --git-dir=$REPO pull
               $EXEC $FILE start
 esac
